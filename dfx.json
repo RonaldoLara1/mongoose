@@ -1,0 +1,50 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    },
+    "prueba_jessi_backend": {
+      "build": "npx azle prueba_jessi_backend",
+      "candid": "src/prueba_jessi_backend/prueba_jessi_backend.did",
+      "gzip": true,
+      "main": "src/prueba_jessi_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/prueba_jessi_backend/prueba_jessi_backend.wasm"
+    },
+    "prueba_jessi_frontend": {
+      "dependencies": [
+        "prueba_jessi_backend"
+      ],
+      "source": [
+        "src/prueba_jessi_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "prueba_jessi_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
